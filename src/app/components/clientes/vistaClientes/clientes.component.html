@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center" >
+    <h1> <p>Gestionar usuarios</p></h1>
+
+</div>
+<div class="col-12 " >
+    <a type="button" class="btn btn-success btn-xl float-right " routerLink="/crearUsuarios" >Nuevo Cliente</a>
+</div>
+<br><br/> <br><br/>
+<div class="">
+<table       class="table col-10  table-bordered table-striped table-hover">
+    <thead>
+  <tr>
+    <!-- <th>ID</th> -->
+
+    <th class=" " >Nombre</th>
+    <th class=" "   >Apellidos</th>
+    <th class=" "  >DNI</th>
+    <th class=" "  >Correo</th>
+    <th class=" "  >Telefono </th>
+    <th class=" "  >Direccion</th>
+    <th class=" "  >CP</th>
+    <th class=" "   >Edad</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+    
+  </tr>
+     
+    </thead>
+ 
+
+<tbody id="tablebody">
+    <tr *ngFor="let usuario of usuarios">
+        
+       <!--  <td>{{usuario.id}}</td>-->
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.apellidos}}</td>
+        <td>{{usuario.dni}}</td>
+        <td>{{usuario.correo}}</td>
+        <td>{{usuario.telefono}}</td>
+        <td>{{usuario.direccion}}</td>
+        <td>{{usuario.cp}}</td>
+        <td>{{usuario.edad}}</td>
+  
+        <td>
+            <a type="button" class="btn btn-success btn-sm " routerLink="/details-usuarios/{{usuario.dni}}" >Editar</a>
+        </td>
+<td> 
+            <a type="button" class="btn btn-danger btn-sm" (click)="showDialog(usuario.nombre,usuario.dni)"  >Eliminar</a>
+        </td>
+    </tr>
+</tbody>
+ </table>
+</div>
+ 
+
+
+ <p-dialog header="Confirme borrar cliente" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+    [draggable]="false" [resizable]="false">
+        <div >¿ estas seguro que desea borrar a el cliente {{nombreUsuarioModal}} ?</div>
+        <p-footer>
+            <button type="button" pButton icon="pi pi-check" (click)="display=false" label="No">No</button>
+            <button type="button" pButton icon="pi pi-times" (click)="borrarCliente()" label="Si" class="ui-button-secondary">Si</button>
+        </p-footer>
+</p-dialog>
+    
+<p-dialog header="Cliente borrado" [(visible)]="displayResolve" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+    [draggable]="false" [resizable]="false">
+        <div > {{respuestaModalConfirmationDelete}} </div>
+    
+</p-dialog>

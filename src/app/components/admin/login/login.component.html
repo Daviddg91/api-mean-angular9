@@ -1,0 +1,37 @@
+<div class="auth_main col-12">
+    
+    <div class="auth_box-container col-6  d-flex justify-content-center row ">
+        <div class="col-12">
+            <h1 class="auth_title">User Login</h1><br/>
+        </div>
+        <div class="col-12" >
+            <form>
+                    <input 
+                        type="text"
+                        [(ngModel)] = "user"
+                        class="auth_input"
+                        placeholder="Email"
+                        name="user"
+                    />
+                    <br/><br/>
+                    <input 
+                        type="password"
+                        [(ngModel)] = "password"
+                        class="auth_input"
+                        placeholder="Password"
+                        name="password"
+                    />
+                    <br/><br/>
+                    <div class="col-12 d-flex justify-content-center" >
+                        <button
+                            type="submit"
+                            class="btn btn-success "
+                            (click)="login()"
+                        >
+                            Login
+                        </button>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>

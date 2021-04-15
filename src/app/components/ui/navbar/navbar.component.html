@@ -1,0 +1,28 @@
+<div class="body">
+    
+    <input type="checkbox"  class="openSidebarMenu" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+   
+    <div id="sidebarMenu"  >
+          <div class="main-content-wrapper col-5 pb-2 pt-2">
+            <div class="btn btn-primary d-flex justify-content-center w-100 mb-1 mt-1 "> <a routerLink="/inicio" >Inicio</a></div>
+            <div *ngIf="isLoggedIn()" class="btn btn-primary d-flex justify-content-center w-100 mr-2 mb-1 mt-1"> <a routerLink="/clientes">Interfaz de clientes</a> </div>
+            <div *ngIf="isLoggedIn()" class="btn btn-primary d-flex justify-content-center w-100 mr-2 mb-1 mt-1"> <a routerLink="/crearUsuarios">Nuevo cliente</a> </div>
+            <div *ngIf="!isLoggedIn()" class="btn btn-success d-flex justify-content-center w-100 mr-2 mb-1 mt-1"> <a routerLink="/login">Login</a></div>
+            <div *ngIf="isLoggedIn()" class="btn btn-success d-flex justify-content-center w-100 mr-2 mb-1 mt-1"> <a  (click)="logout()">Logout</a></div>
+
+          </div>  
+    </div>   
+      <div class="menuDesktop float-right">
+        <div  class="btn btn-primary mr-2 mb-1 mt-1 "> <a routerLink="/inicio" >Inicio</a></div>
+        <div *ngIf="isLoggedIn()" class="btn btn-primary mr-2 mb-1 mt-1"> <a routerLink="/clientes">Interfaz de clientes</a> </div>
+        <div *ngIf="isLoggedIn()"  class="btn btn-primary mr-2 mb-1 mt-1"> <a routerLink="/crearUsuarios">Nuevo cliente</a> </div>
+        <div *ngIf="!isLoggedIn()" class="btn btn-success mr-2 mb-1 mt-1"> <a routerLink="/login">Login</a></div>
+        <div *ngIf="isLoggedIn()" class="btn btn-info mr-2 mb-1 mt-1"> <a  (click)="logout()">Logout</a></div>
+      </div>
+  </div>
+  

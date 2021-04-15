@@ -1,0 +1,66 @@
+
+<div class="col-12 creaClienteForm d-flex justify-content-center">
+    <h1><p>Editar Usuario:</p></h1>
+</div>
+ 
+ <div *ngIf="usuarioEditable" class="col-8 creaClienteForm">
+        <div class="">
+            <label for="nombre" >Nombre: </label>
+            <input  [(ngModel)]="usuarioEditable.nombre" type="text" class="form-control" id="nombre" placeholder="Ingresar Nombre">
+        </div>
+        <div class="alert  alert-danger" id="div-nombre"></div>
+        <div class="">
+            <label for="apellidos" >Apellidos: </label>
+            <input  [(ngModel)]="usuarioEditable.apellidos" type="text" class="form-control" id="apellidos" placeholder="Ingresar Apellidos">
+        </div>
+        <div class="alert  alert-danger" id="div-apellidos"></div>
+
+        <div class="form group">
+            <label for="edad" >Edad: </label>
+            <input  [(ngModel)]="usuarioEditable.edad" type="number" class="form-control" id="edad" placeholder="Ingresar edad">
+        </div>
+        <div class="alert  alert-danger" id="div-edad"></div>
+
+        <div class="form group">
+            <label for="direccion" >Direccion: </label>
+            <input  [(ngModel)]="usuarioEditable.direccion" type="text" class="form-control" id="direccion" placeholder="Ingresar direccion">
+        </div>
+        <div class="alert  alert-danger" id="div-direccion"></div>
+
+        <div class="form group">
+            <label for="dni" >DNI: </label>
+            <input  [(ngModel)]="usuarioEditable.dni" type="text" class="form-control" id="dni" placeholder="Ingresar dni">
+        </div>
+        <div class="alert  alert-danger" id="div-dni"></div>
+
+        <div class="form group">
+            <label for="cp" >Código postal: </label>
+            <input  [(ngModel)]="usuarioEditable.cp" type="text" class="form-control" id="cp" placeholder="Ingresar cp">
+        </div>
+        <div class="alert  alert-danger" id="div-cp"></div>
+
+        <div class="form group">
+            <label for="telefono" >Teléfono: </label>
+            <input  [(ngModel)]="usuarioEditable.telefono" type="number" class="form-control" id="telefono" placeholder="Ingresar telefono">
+        </div>
+        <div class="alert  alert-danger" id="div-telefono"></div>
+
+        <div class="form group">
+            <label for="correo" >Correo electrónico: </label>
+            <input  [(ngModel)]="usuarioEditable.correo" type="email" class="form-control" id="correo" placeholder="Ingresar correo">
+        </div>
+        <div class="alert  alert-danger alert" id="div-correo"></div>
+        <br/><br/>
+        <div class="float-right">
+            <button (click)="modificarUsuario()" class="btn btn-primary ">Modificar Usuario</button>
+        </div>
+ 
+
+<p-dialog header="Operación exitosa" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+[draggable]="false" [resizable]="false">
+    <div >Cliente modificado con exito </div>
+    <p-footer>
+    </p-footer>
+</p-dialog>
+</div>
+<br/><br/>
